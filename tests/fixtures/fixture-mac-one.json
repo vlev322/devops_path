@@ -1,0 +1,643 @@
+{                           
+  "id" : "lima-ubuntu",
+  "class" : "system",
+  "claimed" : true,
+  "handle" : "DMI:0000",
+  "description" : "Desktop Computer",
+  "product" : "Apple Virtualization Generic Platform",
+  "vendor" : "Apple Inc.",
+  "version" : "1",
+  "serial" : "Virtualization-098f0896-e8a2-4993-b8cb-cff1c66723ce",
+  "width" : 64,
+  "configuration" : {
+    "boot" : "normal",
+    "chassis" : "desktop",
+    "uuid" : "d21a0082-144f-5018-b705-c908c87493ca"
+  },
+  "capabilities" : {
+    "smbios-3.3.0" : "SMBIOS version 3.3.0",
+    "dmi-3.3.0" : "DMI version 3.3.0",
+    "smp" : "Symmetric Multi-Processing",
+    "cp15_barrier" : true,
+    "swp" : true,
+    "tagged_addr_disabled" : true
+  },
+  "children" : [    {
+      "id" : "core",
+      "class" : "bus",
+      "claimed" : true,
+      "description" : "Motherboard",
+      "physid" : "0",
+      "children" : [        {
+          "id" : "cpu",
+          "class" : "processor",
+          "claimed" : true,
+          "handle" : "DMI:0002",
+          "description" : "CPU",
+          "product" : "ARMv8",
+          "vendor" : "Apple Inc.",
+          "physid" : "2",
+          "businfo" : "cpu@0",
+          "slot" : "Socket 0",
+          "configuration" : {
+            "cores" : "4",
+            "enabledcores" : "4",
+            "threads" : "4"
+          },
+          "capabilities" : {
+            "lm" : "64-bit capable"
+          }
+        },
+        {
+          "id" : "memory",
+          "class" : "memory",
+          "claimed" : true,
+          "handle" : "DMI:0003",
+          "description" : "System Memory",
+          "physid" : "3",
+          "slot" : "System board or motherboard",
+          "units" : "bytes",
+          "size" : 4294967296,
+          "children" : [            {
+              "id" : "bank",
+              "class" : "memory",
+              "claimed" : true,
+              "handle" : "DMI:0004",
+              "description" : "DIMM DRAM",
+              "physid" : "0",
+              "slot" : "DIMM 0",
+              "units" : "bytes",
+              "size" : 4294967296,
+              "width" : 64
+            }]
+        },
+        {
+          "id" : "firmware",
+          "class" : "memory",
+          "claimed" : true,
+          "description" : "BIOS",
+          "vendor" : "Apple Inc.",
+          "physid" : "5",
+          "version" : "2103.160.2.0.0",
+          "date" : "08/18/2026",
+          "units" : "bytes",
+          "size" : 1048576,
+          "capacity" : 1048576,
+          "capabilities" : {
+            "pci" : "PCI bus",
+            "upgrade" : "BIOS EEPROM can be upgraded",
+            "shadowing" : "BIOS shadowing",
+            "cdboot" : "Booting from CD-ROM/DVD",
+            "bootselect" : "Selectable boot path",
+            "uefi" : "UEFI specification is supported",
+            "virtualmachine" : "This machine is a virtual machine"
+          }
+        },
+        {
+          "id" : "pci",
+          "class" : "bridge",
+          "claimed" : true,
+          "handle" : "PCIBUS:0000:00",
+          "description" : "Host bridge",
+          "product" : "Apple Inc.",
+          "vendor" : "Apple Inc.",
+          "physid" : "100",
+          "businfo" : "pci@0000:00:00.0",
+          "version" : "00",
+          "width" : 32,
+          "clock" : 33000000,
+          "children" : [            {
+              "id" : "network",
+              "class" : "network",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:01.0",
+              "description" : "Ethernet controller",
+              "product" : "Virtio 1.0 network device",
+              "vendor" : "Red Hat, Inc.",
+              "physid" : "1",
+              "businfo" : "pci@0000:00:01.0",
+              "version" : "01",
+              "width" : 64,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "virtio-pci",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "msix" : "MSI-X",
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "virtio0",
+                  "class" : "network",
+                  "claimed" : true,
+                  "description" : "Ethernet interface",
+                  "physid" : "0",
+                  "businfo" : "virtio@0",
+                  "logicalname" : "eth0",
+                  "serial" : "52:55:55:d1:44:73",
+                  "configuration" : {
+                    "autonegotiation" : "off",
+                    "broadcast" : "yes",
+                    "driver" : "virtio_net",
+                    "driverversion" : "1.0.0",
+                    "ip" : "203.0.113.77",
+                    "link" : "yes",
+                    "multicast" : "yes"
+                  },
+                  "capabilities" : {
+                    "ethernet" : true,
+                    "physical" : "Physical interface"
+                  }
+                }]
+            },
+            {
+              "id" : "communication:0",
+              "class" : "communication",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:05.0",
+              "description" : "Communication controller",
+              "product" : "Virtio 1.0 console",
+              "vendor" : "Red Hat, Inc.",
+              "physid" : "5",
+              "businfo" : "pci@0000:00:05.0",
+              "version" : "01",
+              "width" : 64,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "virtio-pci",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "msix" : "MSI-X",
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "virtio1",
+                  "class" : "generic",
+                  "description" : "Virtual I/O device",
+                  "physid" : "0",
+                  "businfo" : "virtio@1",
+                  "configuration" : {
+                    "driver" : "virtio_console"
+                  }
+                }]
+            },
+            {
+              "id" : "storage:0",
+              "class" : "storage",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:06.0",
+              "description" : "Mass storage controller",
+              "product" : "Virtio 1.0 block device",
+              "vendor" : "Red Hat, Inc.",
+              "physid" : "6",
+              "businfo" : "pci@0000:00:06.0",
+              "version" : "01",
+              "width" : 64,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "virtio-pci",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "storage" : true,
+                "msix" : "MSI-X",
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "virtio2",
+                  "class" : "disk",
+                  "claimed" : true,
+                  "handle" : "GUID:9e1ab531-930d-490b-a94d-597e189b8613",
+                  "description" : "Virtual I/O device",
+                  "physid" : "0",
+                  "businfo" : "virtio@2",
+                  "logicalname" : "/dev/vda",
+                  "units" : "bytes",
+                  "size" : 107374182400,
+                  "configuration" : {
+                    "driver" : "virtio_blk",
+                    "guid" : "9e1ab531-930d-490b-a94d-597e189b8613",
+                    "logicalsectorsize" : "512",
+                    "sectorsize" : "512"
+                  },
+                  "capabilities" : {
+                    "gpt-1.00" : "GUID Partition Table version 1.00",
+                    "partitioned" : "Partitioned disk",
+                    "partitioned:gpt" : "GUID partition table"
+                  },
+                  "children" : [                    {
+                      "id" : "volume:0",
+                      "class" : "volume",
+                      "claimed" : true,
+                      "handle" : "GUID:c4c62a83-ee3f-4325-bfd1-5ea9571b2e09",
+                      "description" : "EXT4 volume",
+                      "vendor" : "Linux",
+                      "physid" : "1",
+                      "businfo" : "virtio@2,1",
+                      "logicalname" : ["/dev/vda1", "/"],
+                      "dev" : "253:1",
+                      "version" : "1.0",
+                      "serial" : "e458f1bb-0ef5-47b7-bf57-fd3b1995590f",
+                      "size" : 106299371520,
+                      "capacity" : 106299374592,
+                      "configuration" : {
+                        "created" : "2026-09-27 16:30:16",
+                        "filesystem" : "ext4",
+                        "label" : "cloudimg-rootfs",
+                        "lastmountpoint" : "/",
+                        "modified" : "2026-10-14 12:45:54",
+                        "mount.fstype" : "ext4",
+                        "mount.options" : "rw,relatime,discard,errors=remount-ro,commit=30",
+                        "mounted" : "2026-10-14 12:45:55",
+                        "name" : "cloudimg-rootfs",
+                        "state" : "mounted"
+                      },
+                      "capabilities" : {
+                        "journaled" : true,
+                        "extended_attributes" : "Extended Attributes",
+                        "large_files" : "4GB+ files",
+                        "huge_files" : "16TB+ files",
+                        "dir_nlink" : "directories with 65000+ subdirs",
+                        "recover" : "needs recovery",
+                        "64bit" : "64bit filesystem",
+                        "extents" : "extent-based allocation",
+                        "ext4" : true,
+                        "ext2" : "EXT2/EXT3",
+                        "initialized" : "initialized volume"
+                      }
+                    },
+                    {
+                      "id" : "volume:1",
+                      "class" : "volume",
+                      "claimed" : true,
+                      "handle" : "GUID:6937dc48-eed6-47cb-8d91-be3ef9192a05",
+                      "description" : "EXT4 volume",
+                      "vendor" : "Linux",
+                      "physid" : "d",
+                      "businfo" : "virtio@2,13",
+                      "logicalname" : ["/dev/vda13", "/boot"],
+                      "dev" : "253:13",
+                      "version" : "1.0",
+                      "serial" : "eebf3613-a3ed-44f2-be34-b8ff6ec83e3d",
+                      "size" : 967835648,
+                      "capacity" : 967835648,
+                      "configuration" : {
+                        "created" : "2026-09-27 16:30:42",
+                        "filesystem" : "ext4",
+                        "label" : "BOOT",
+                        "lastmountpoint" : "/boot",
+                        "modified" : "2026-10-14 12:45:56",
+                        "mount.fstype" : "ext4",
+                        "mount.options" : "rw,relatime",
+                        "mounted" : "2026-10-14 12:45:56",
+                        "state" : "mounted"
+                      },
+                      "capabilities" : {
+                        "journaled" : true,
+                        "extended_attributes" : "Extended Attributes",
+                        "large_files" : "4GB+ files",
+                        "huge_files" : "16TB+ files",
+                        "dir_nlink" : "directories with 65000+ subdirs",
+                        "recover" : "needs recovery",
+                        "64bit" : "64bit filesystem",
+                        "extents" : "extent-based allocation",
+                        "ext4" : true,
+                        "ext2" : "EXT2/EXT3",
+                        "initialized" : "initialized volume"
+                      }
+                    },
+                    {
+                      "id" : "volume:2",
+                      "class" : "volume",
+                      "claimed" : true,
+                      "handle" : "GUID:64333ede-0c27-49cb-be11-9a28fe94d602",
+                      "description" : "Windows FAT volume",
+                      "vendor" : "mkfs.fat",
+                      "physid" : "f",
+                      "businfo" : "virtio@2,15",
+                      "logicalname" : ["/dev/vda15", "/boot/efi"],
+                      "dev" : "253:15",
+                      "version" : "FAT32",
+                      "serial" : "b4a6-1448",
+                      "size" : 102734848,
+                      "capacity" : 103809024,
+                      "configuration" : {
+                        "FATs" : "2",
+                        "filesystem" : "fat",
+                        "label" : "UEFI",
+                        "mount.fstype" : "vfat",
+                        "mount.options" : "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro",
+                        "state" : "mounted"
+                      },
+                      "capabilities" : {
+                        "boot" : "Contains boot code",
+                        "fat" : "Windows FAT",
+                        "initialized" : "initialized volume"
+                      }
+                    }]
+                }]
+            },
+            {
+              "id" : "storage:1",
+              "class" : "storage",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:07.0",
+              "description" : "Mass storage controller",
+              "product" : "Virtio 1.0 block device",
+              "vendor" : "Red Hat, Inc.",
+              "physid" : "7",
+              "businfo" : "pci@0000:00:07.0",
+              "version" : "01",
+              "width" : 64,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "virtio-pci",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "storage" : true,
+                "msix" : "MSI-X",
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "virtio3",
+                  "class" : "disk",
+                  "claimed" : true,
+                  "description" : "Virtual I/O device",
+                  "physid" : "0",
+                  "businfo" : "virtio@3",
+                  "logicalname" : ["/dev/vdb", "/mnt/lima-cidata"],
+                  "units" : "bytes",
+                  "size" : 286830592,
+                  "configuration" : {
+                    "driver" : "virtio_blk",
+                    "logicalsectorsize" : "512",
+                    "mount.fstype" : "iso9660",
+                    "mount.options" : "ro,relatime,nojoliet,overriderockperm,check=s,map=n,blocksize=2048,uid=0,dmode=700,fmode=700,iocharset=utf8",
+                    "sectorsize" : "512",
+                    "state" : "mounted"
+                  }
+                }]
+            },
+            {
+              "id" : "storage:2",
+              "class" : "storage",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:08.0",
+              "description" : "Mass storage controller",
+              "product" : "Virtio 1.0 file system",
+              "vendor" : "Red Hat, Inc.",
+              "physid" : "8",
+              "businfo" : "pci@0000:00:08.0",
+              "version" : "01",
+              "width" : 64,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "virtio-pci",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "storage" : true,
+                "msix" : "MSI-X",
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "virtio4",
+                  "class" : "generic",
+                  "description" : "Virtual I/O device",
+                  "physid" : "0",
+                  "businfo" : "virtio@4",
+                  "configuration" : {
+                    "driver" : "virtiofs"
+                  }
+                }]
+            },
+            {
+              "id" : "communication:1",
+              "class" : "communication",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:09.0",
+              "description" : "Communication controller",
+              "product" : "Virtio 1.0 socket",
+              "vendor" : "Red Hat, Inc.",
+              "physid" : "9",
+              "businfo" : "pci@0000:00:09.0",
+              "version" : "01",
+              "width" : 64,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "virtio-pci",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "msix" : "MSI-X",
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "virtio5",
+                  "class" : "generic",
+                  "description" : "Virtual I/O device",
+                  "physid" : "0",
+                  "businfo" : "virtio@5",
+                  "configuration" : {
+                    "driver" : "vmw_vsock_virtio_transport"
+                  }
+                }]
+            },
+            {
+              "id" : "generic",
+              "class" : "generic",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:0a.0",
+              "description" : "Network and computing encryption device",
+              "product" : "Virtio 1.0 RNG",
+              "vendor" : "Red Hat, Inc.",
+              "physid" : "a",
+              "businfo" : "pci@0000:00:0a.0",
+              "version" : "01",
+              "width" : 64,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "virtio-pci",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "msix" : "MSI-X",
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "virtio6",
+                  "class" : "generic",
+                  "description" : "Virtual I/O device",
+                  "physid" : "0",
+                  "businfo" : "virtio@6",
+                  "configuration" : {
+                    "driver" : "virtio_rng"
+                  }
+                }]
+            },
+            {
+              "id" : "memory",
+              "class" : "memory",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:0b.0",
+              "description" : "Memory controller",
+              "product" : "Virtio 1.0 balloon",
+              "vendor" : "Red Hat, Inc.",
+              "physid" : "b",
+              "businfo" : "pci@0000:00:0b.0",
+              "version" : "01",
+              "width" : 64,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "virtio-pci",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "msix" : "MSI-X",
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "virtio7",
+                  "class" : "generic",
+                  "description" : "Virtual I/O device",
+                  "physid" : "0",
+                  "businfo" : "virtio@7",
+                  "configuration" : {
+                    "driver" : "virtio_balloon"
+                  }
+                }]
+            },
+            {
+              "id" : "usb",
+              "class" : "bus",
+              "claimed" : true,
+              "handle" : "PCI:0000:00:0c.0",
+              "description" : "USB controller",
+              "product" : "Apple Inc.",
+              "vendor" : "Apple Inc.",
+              "physid" : "c",
+              "businfo" : "pci@0000:00:0c.0",
+              "version" : "00",
+              "width" : 32,
+              "clock" : 33000000,
+              "configuration" : {
+                "driver" : "xhci_hcd",
+                "latency" : "64"
+              },
+              "capabilities" : {
+                "msix" : "MSI-X",
+                "msi" : "Message Signalled Interrupts",
+                "xhci" : true,
+                "bus_master" : "bus mastering",
+                "cap_list" : "PCI capabilities listing"
+              },
+              "children" : [                {
+                  "id" : "usbhost:0",
+                  "class" : "bus",
+                  "claimed" : true,
+                  "handle" : "USB:1:1",
+                  "product" : "xHCI Host Controller",
+                  "vendor" : "Linux 7.0.0-34-generic xhci-hcd",
+                  "physid" : "0",
+                  "businfo" : "usb@1",
+                  "logicalname" : "usb1",
+                  "version" : "7.00",
+                  "configuration" : {
+                    "driver" : "hub",
+                    "slots" : "8",
+                    "speed" : "480Mbit/s"
+                  },
+                  "capabilities" : {
+                    "usb-2.00" : "USB 2.0"
+                  },
+                  "children" : [                    {
+                      "id" : "usb:0",
+                      "class" : "input",
+                      "claimed" : true,
+                      "handle" : "USB:1:2",
+                      "description" : "Keyboard",
+                      "product" : "Apple Inc. Virtual USB Keyboard",
+                      "vendor" : "Apple Inc.",
+                      "physid" : "1",
+                      "businfo" : "usb@1:1",
+                      "logicalname" : ["input1", "/dev/input/event1", "input1::capslock", "input1::numlock", "input1::scrolllock"],
+                      "version" : "0.00",
+                      "configuration" : {
+                        "driver" : "usbhid",
+                        "maxpower" : "500mA",
+                        "speed" : "12Mbit/s"
+                      },
+                      "capabilities" : {
+                        "usb-2.00" : "USB 2.0",
+                        "usb" : "USB"
+                      }
+                    },
+                    {
+                      "id" : "usb:1",
+                      "class" : "input",
+                      "claimed" : true,
+                      "handle" : "USB:1:3",
+                      "description" : "Human interface device",
+                      "product" : "Apple Inc. Virtual USB Digitizer",
+                      "vendor" : "Apple Inc.",
+                      "physid" : "2",
+                      "businfo" : "usb@1:2",
+                      "logicalname" : ["input2", "/dev/input/event2", "/dev/input/js0", "/dev/input/mouse0"],
+                      "version" : "0.00",
+                      "configuration" : {
+                        "driver" : "usbhid",
+                        "maxpower" : "500mA",
+                        "speed" : "12Mbit/s"
+                      },
+                      "capabilities" : {
+                        "usb-2.00" : "USB 2.0",
+                        "usb" : "USB"
+                      }
+                    }]
+                },
+                {
+                  "id" : "usbhost:1",
+                  "class" : "bus",
+                  "claimed" : true,
+                  "handle" : "USB:2:1",
+                  "product" : "xHCI Host Controller",
+                  "vendor" : "Linux 7.0.0-34-generic xhci-hcd",
+                  "physid" : "1",
+                  "businfo" : "usb@2",
+                  "logicalname" : "usb2",
+                  "version" : "7.00",
+                  "configuration" : {
+                    "driver" : "hub",
+                    "slots" : "8",
+                    "speed" : "10000Mbit/s"
+                  },
+                  "capabilities" : {
+                    "usb-3.10" : true
+                  }
+                }]
+            }]
+        }]
+    },
+    {
+      "id" : "input",
+      "class" : "input",
+      "claimed" : true,
+      "product" : "Power Button",
+      "physid" : "1",
+      "logicalname" : ["input0", "/dev/input/event0"],
+      "capabilities" : {
+        "platform" : true
+      }
+    }]
+}
